@@ -13,15 +13,15 @@
     autocmd BufWritePre *.[ch] %s/\%$/\r/e
 
 " When shortcut files are updated, renew bash and ranger configs with new material:
-	autocmd BufWritePost bm-files,bm-dirs !shortcuts
-" Run xrdb whenever Xdefaults or Xresources are updated.
-	autocmd BufRead,BufNewFile xresources,xdefaults set filetype=xdefaults
-	autocmd BufWritePost Xresources,Xdefaults,xresources,xdefaults !xrdb %
-" Recompile dwmblocks on config edit.
-	autocmd BufWritePost ~/.local/src/dwmblocks/config.h !cd ~/.local/src/dwmblocks/; sudo make install && { killall -q dwmblocks;setsid -f dwmblocks }
+	" autocmd BufWritePost bm-files,bm-dirs !shortcuts
+" " Run xrdb whenever Xdefaults or Xresources are updated.
+	" autocmd BufRead,BufNewFile xresources,xdefaults set filetype=xdefaults
+	" autocmd BufWritePost Xresources,Xdefaults,xresources,xdefaults !xrdb %
+" " Recompile dwmblocks on config edit.
+" 	autocmd BufWritePost ~/.local/src/dwmblocks/config.h !cd ~/.local/src/dwmblocks/; sudo make install && { killall -q dwmblocks;setsid -f dwmblocks }
 
-" sxhkd restart on update
-    autocmd BufWritePost *sxhkdrc !pkill -SIGUSR1 sxhkd
+" " sxhkd restart on update
+"     autocmd BufWritePost *sxhkdrc !pkill -SIGUSR1 sxhkd
 
 " open help vertically
     autocmd BufWinEnter <buffer> wincmd L

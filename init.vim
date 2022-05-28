@@ -75,17 +75,17 @@ source ./myConfigs/autocmds.vim
 " Plugin configs
 lua << EOF
 require('theme')
-require('lsp')
-require('treesitter')
+-- require('lsp')
+-- require('treesitter')
 require('completion')
 require('nvim-colorizer')
 require('_nvim-autopairs')
 require('_bufferline')
-require('compe-words')
+-- require('compe-words')
 EOF
 
 
-source ./myConfigs/lspconfig.vim
+" source ./myConfigs/lspconfig.vim
 source ./myConfigs/vimling.vim
 source ./myConfigs/vimwiki.vim
 source ./myConfigs/airline.vim

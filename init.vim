@@ -11,7 +11,9 @@ let mapleader =","
 " 	autocmd VimEnter * PlugInstall
 " endif
 
-call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
+
+" call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
+call plug#begin('C:\Users\samin\AppData\Local\nvim\autoload\plugged')
 
 " LSP Stuff
 Plug 'nvim-lua/plenary.nvim'
@@ -67,10 +69,10 @@ let g:neovide_refresh_rate=144
 set guifont=JetBrainsMono\ NF:h16
 
 " Basic stuff
-source ./myConfigs/settings.vim
+source C:/users/samin/AppData/Local/nvim/myConfigs/settings.vim
 " source ~/.config/nvim/myConfigs/themes.vim
-source ./myConfigs/remaps.vim
-source ./myConfigs/autocmds.vim
+source C:/users/samin/AppData/Local/nvim/myConfigs/remaps.vim
+source C:/users/samin/AppData/Local/nvim/myConfigs/autocmds.vim
 
 " Plugin configs
 lua << EOF
@@ -86,15 +88,15 @@ EOF
 
 
 " source ./myConfigs/lspconfig.vim
-source ./myConfigs/vimling.vim
-source ./myConfigs/vimwiki.vim
-source ./myConfigs/airline.vim
-source ./myConfigs/digraps_alphabets.vim
-source ./myConfigs/startify-settings.vim
-source ./myConfigs/signify.vim
-source ./myConfigs/quickscope.vim
-source ./myConfigs/hop.vim
-source ./myConfigs/neoformatter.vim
+source C:/users/samin/AppData/Local/nvim/myConfigs/vimling.vim
+source C:/users/samin/AppData/Local/nvim/myConfigs/vimwiki.vim
+source C:/users/samin/AppData/Local/nvim/myConfigs/airline.vim
+source C:/users/samin/AppData/Local/nvim/myConfigs/digraps_alphabets.vim
+source C:/users/samin/AppData/Local/nvim/myConfigs/startify-settings.vim
+source C:/users/samin/AppData/Local/nvim/myConfigs/signify.vim
+source C:/users/samin/AppData/Local/nvim/myConfigs/quickscope.vim
+source C:/users/samin/AppData/Local/nvim/myConfigs/hop.vim
+source C:/users/samin/AppData/Local/nvim/myConfigs/neoformatter.vim
 
 " Unused stuff
 " source ~/.config/nvim/myConfigs/polyglot.vim

@@ -1,6 +1,6 @@
 " Themes
 set termguicolors
-" source $HOME/.config/nvim/themes/onedark.vim
+" source C:/users/samin/AppData/Local/nvim/themes/onedark.vim
 " source $HOME/.config/nvim/themes/codedark.vim
 
 lua <<EOF

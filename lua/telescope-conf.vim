@@ -1,32 +1,3 @@
-" >> Lsp key bindings
-nnoremap <silent> gd        <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> gD        <cmd>lua vim.lsp.buf.declaration()<CR>
-nnoremap <silent> gr        <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> gi        <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> K         <cmd>Lspsaga hover_doc<CR>
-nnoremap <silent> gk        <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <silent> g[        <cmd>Lspsaga diagnostic_jump_prev<CR>
-nnoremap <silent> g]        <cmd>Lspsaga diagnostic_jump_next<CR>
-nnoremap <silent> <leader>\ <cmd>lua vim.lsp.buf.formatting()<CR>
-nnoremap <silent> gn        <cmd>lua vim.lsp.buf.rename()<CR>
-nnoremap <silent> ga        <cmd>Lspsaga code_action<CR>
-xnoremap <silent> ga        <cmd>Lspsaga range_code_action<CR>
-nnoremap <silent> gs        <cmd>Lspsaga signature_help<CR>
-
-" Tab Complete
-" inoremap <expr> <Tab>       pumvisible() ? "\<C-n>" : "\<Tab>"
-" inoremap <expr> <S-Tab>     pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-inoremap <silent> <expr> <C-Space> compe#complete()
-inoremap <silent> <expr> <CR>      compe#confirm('<CR>')
-inoremap <silent> <expr> <C-e>     compe#close('<C-e>')
-inoremap <silent> <expr> <C-f>     compe#scroll({ 'delta': +4 })
-inoremap <silent> <expr> <C-d>     compe#scroll({ 'delta': -4 })
-
-" Set completeopt to have a better completion experience
-set completeopt=menuone,noinsert,noselect
-
-
 """"""""""""""""""""""""""""""
 """"" Telescope bindings """""
 """"""""""""""""""""""""""""""

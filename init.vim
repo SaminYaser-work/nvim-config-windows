@@ -15,15 +15,37 @@ let mapleader =","
 " call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
 call plug#begin('C:\Users\samin\AppData\Local\nvim\autoload\plugged')
 
-" LSP Stuff
+" LSP Support
+Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
+
+" Autocompletion
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-nvim-lua'
+
+" LSP Setup
+Plug 'VonHeikemen/lsp-zero.nvim'
+
+" Snippets
+Plug 'L3MON4D3/LuaSnip'
+Plug 'rafamadriz/friendly-snippets'
+
+" Telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-Plug 'neovim/nvim-lspconfig'
-Plug 'kabouzeid/nvim-lspinstall'
-Plug 'glepnir/lspsaga.nvim'
-Plug 'hrsh7th/nvim-compe'
+
+" Plug 'neovim/nvim-lspconfig'
+" Plug 'kabouzeid/nvim-lspinstall'
+" Plug 'glepnir/lspsaga.nvim'
+" Plug 'hrsh7th/nvim-compe'
+
+" Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
@@ -50,13 +72,14 @@ Plug 'tpope/vim-fugitive'
 " Plug 'thanthese/Tortoise-Typing'
 Plug 'unblevable/quick-scope'
 Plug 'skywind3000/asyncrun.vim'
-Plug 'SirVer/ultisnips'
-Plug 'phaazon/hop.nvim'
+" Plug 'SirVer/ultisnips'
+" Plug 'phaazon/hop.nvim'
 Plug 'tweekmonster/startuptime.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'windwp/nvim-autopairs'
+" Plug 'windwp/nvim-autopairs'
 " Plug 'famiu/feline.nvim'
 Plug 'akinsho/bufferline.nvim'
+Plug 'drzel/vim-gui-zoom'
 call plug#end()
 
 
@@ -67,27 +90,44 @@ call plug#end()
 let g:neovide_cursor_vfx_mode = "railgun"
 let g:neovide_refresh_rate=144
 set guifont=JetBrainsMono\ NF:h16
+nmap <leader>= :ZoomIn<CR>
+nmap <leader>- :ZoomOut<CR>
+
+
+" LSP Setup
+lua <<EOF
+require('nvim-treesitter.install').compilers = { "clang" }
+vim.opt.signcolumn = 'yes'
+local lsp = require('lsp-zero')
+
+lsp.preset('recommended')
+lsp.nvim_workspace()
+lsp.setup()
+EOF
 
 " Basic stuff
 source C:/users/samin/AppData/Local/nvim/myConfigs/settings.vim
-" source ~/.config/nvim/myConfigs/themes.vim
+source C:/users/samin/AppData/Local/nvim/myConfigs/themes.vim
 source C:/users/samin/AppData/Local/nvim/myConfigs/remaps.vim
 source C:/users/samin/AppData/Local/nvim/myConfigs/autocmds.vim
 
 " Plugin configs
 lua << EOF
-require('theme')
+
+-- require('theme')
 -- require('lsp')
--- require('treesitter')
-require('completion')
+require('treesitter')
+-- require('completion')
 require('nvim-colorizer')
-require('_nvim-autopairs')
+-- require('_nvim-autopairs')
 require('_bufferline')
 -- require('compe-words')
+
 EOF
 
 
-" source ./myConfigs/lspconfig.vim
+" source C:/users/samin/AppData/Local/nvim/myConfigs/lspconfig.vim
+source C:/users/samin/AppData/Local/nvim/lua/telescope-conf.vim
 source C:/users/samin/AppData/Local/nvim/myConfigs/vimling.vim
 source C:/users/samin/AppData/Local/nvim/myConfigs/vimwiki.vim
 source C:/users/samin/AppData/Local/nvim/myConfigs/airline.vim
@@ -95,7 +135,7 @@ source C:/users/samin/AppData/Local/nvim/myConfigs/digraps_alphabets.vim
 source C:/users/samin/AppData/Local/nvim/myConfigs/startify-settings.vim
 source C:/users/samin/AppData/Local/nvim/myConfigs/signify.vim
 source C:/users/samin/AppData/Local/nvim/myConfigs/quickscope.vim
-source C:/users/samin/AppData/Local/nvim/myConfigs/hop.vim
+" source C:/users/samin/AppData/Local/nvim/myConfigs/hop.vim
 source C:/users/samin/AppData/Local/nvim/myConfigs/neoformatter.vim
 
 " Unused stuff

@@ -29,8 +29,8 @@
 	" map <leader>S :!clear && shellcheck -x %<CR>
 
 " Open my bibliography file in split
-	map <leader>b :vsp<space>$BIB<CR>
-	map <leader>r :vsp<space>$REFER<CR>
+	" map <leader>b :vsp<space>$BIB<CR>
+	" map <leader>r :vsp<space>$REFER<CR>
 
 " Replace all is aliased to S.
 	nnoremap S :%s//g<Left><Left>
@@ -46,7 +46,7 @@
     nnoremap <S-Tab> :bprevious<CR>
 
 " AsyncRun terminal
-    map <F9> :cd %:p:h<CR>:AsyncRun st -e ./%<<CR>
+    " map <F9> :cd %:p:h<CR>:AsyncRun st -e ./%<<CR>
 
 " Open Startify
     map <leader>S :Startify<CR>
@@ -88,3 +88,6 @@
 
 " Prettier format
     map <leader>p :PrettierAsync<CR>
+
+" LazyGit
+nnoremap <silent> <leader>gg :LazyGit<CR>

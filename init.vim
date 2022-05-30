@@ -39,6 +39,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'nvim-telescope/telescope-file-browser.nvim'
 
 " Plug 'neovim/nvim-lspconfig'
 " Plug 'kabouzeid/nvim-lspinstall'
@@ -80,6 +81,7 @@ Plug 'junegunn/vim-easy-align'
 " Plug 'famiu/feline.nvim'
 Plug 'akinsho/bufferline.nvim'
 Plug 'drzel/vim-gui-zoom'
+Plug 'kdheepak/lazygit.nvim'
 call plug#end()
 
 

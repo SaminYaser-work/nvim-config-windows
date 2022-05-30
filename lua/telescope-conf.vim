@@ -22,6 +22,14 @@ lua << EOF
 -- To get fzf loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
 -- require('telescope').load_extension('fzf')
+require("telescope").load_extension "file_browser"
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<space>f",
+  ":Telescope file_browser<CR>",
+  { noremap = true }
+)
 
 EOF
 
@@ -50,7 +58,7 @@ nnoremap <space>' <cmd>lua require'telescope.builtin'.marks{}<CR>
 nnoremap <space>gf <cmd>lua require'telescope.builtin'.git_files{}<CR>
 
 " all files
-nnoremap <space>f <cmd>lua require'telescope.builtin'.find_files{}<CR>
+nnoremap <space>s <cmd>lua require'telescope.builtin'.find_files{}<CR>
 
 " pick color scheme
 nnoremap <space>c <cmd>lua require'telescope.builtin'.colorscheme{}<CR>
